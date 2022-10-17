@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.Iterator;
 
 public class Main {
@@ -27,7 +28,13 @@ public class Main {
 
         }
         System.out.println(C);
-        Collections.sort(C);
+
+        C.sort(new Comparator<String>() {
+            @Override
+            public int compare(String o1, String o2) {
+                return o1.length() - o2.length();
+            }
+        });
         System.out.println(C);
     }
 }
